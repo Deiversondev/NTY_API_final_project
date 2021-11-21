@@ -14,6 +14,10 @@ header {
     align-items: center;
 }
 
+.trending img {
+    width: 50px;
+}
+
 .links {
     width: 40%;
     /* border: 1px solid #ca1616; */

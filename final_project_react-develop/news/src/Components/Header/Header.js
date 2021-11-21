@@ -1,3 +1,4 @@
+import icon from '../Header/nytIcon.png'
 import styles from './Header.module.css'
 
 const Header = ({Link}) => {
@@ -6,9 +7,9 @@ const Header = ({Link}) => {
         <div>
              <header>
                  <div className={styles.trending}>
-
+                    <img src={icon} alt="" />
                      <a href="" >
-                     <Link to= "/">Trending</Link>
+                     <Link to= "/">New York Times</Link>
                      </a>
                  </div>
                 <div className={styles.links}>

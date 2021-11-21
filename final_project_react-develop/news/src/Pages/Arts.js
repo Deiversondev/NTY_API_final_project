@@ -1,40 +1,34 @@
 import { useContext , useEffect} from "react";
+import Loading from "../Components/Loading/Loading";
 import {SectionContext} from '../context/SectionContext';
 import api from "../api"
 import Card from "../Components/Card/Card";
 
 const Arts = () => {
 
-    const {section,setSection,key} = useContext(SectionContext);
+    const {section,setSection,key,loading,setLoading} = useContext(SectionContext);
 
     useEffect(() => {
         (async () => {
-         getNews()
+            const {data} = await api.get(`arts.json?api-key=${key}`)
+            let list = data.results;
+            let allNews = list.filter(news => news.section !== '')
+            setSection(allNews)
+            setLoading(false)
         })()
       }, []);
 
-      function getNews(){
-        api.get(`arts.json?api-key=${key}`)
-        .then(response => {
-            let Data = response.data;
-            console.log(Data);
-            let list = Data.results;
-            let allNews = list.filter(news => news.section !== '')
-            console.log(allNews)
-            setSection(allNews)
-        })
-    }
     
     return (
         <div>
             {
-            section &&  section.map(news => {
-                return (
-                        <div>
-                            <Card news={news}/>
-                        </div>
-                ) }) 
-            }     
+                loading ? <Loading/> :  section &&  section.map(news => {
+                    return (
+                            <div>
+                                <Card news={news}/>
+                            </div>
+                    ) }) 
+            }
         </div>
             )
 }
