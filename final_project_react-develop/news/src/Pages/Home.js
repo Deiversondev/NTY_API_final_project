@@ -21,6 +21,7 @@ const Home = () => {
 
   return (
     <div>
+        <h1>Trending</h1>
         {
             loading ? <Loading/> :  section &&  section.map(news => {
                 return (

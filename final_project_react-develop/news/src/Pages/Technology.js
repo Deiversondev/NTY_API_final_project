@@ -22,6 +22,7 @@ const Technology = () => {
 
       return (
         <div>
+            <h1>Technology</h1>
             {
                 loading ? <Loading/> :  section &&  section.map(news => {
                     return (

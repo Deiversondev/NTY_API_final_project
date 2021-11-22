@@ -21,6 +21,7 @@ const Arts = () => {
     
     return (
         <div>
+            <h1>Arts</h1>
             {
                 loading ? <Loading/> :  section &&  section.map(news => {
                     return (

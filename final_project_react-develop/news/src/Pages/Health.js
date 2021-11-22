@@ -20,6 +20,7 @@ const Health = () => {
 
       return (
         <div>
+            <h1>Health</h1>
             {
                 loading ? <Loading/> :  section &&  section.map(news => {
                     return (
