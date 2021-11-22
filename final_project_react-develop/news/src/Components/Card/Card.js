@@ -1,4 +1,3 @@
-import imageDefault from '../Card/defaultIMG.jpeg'
 import styles from './Card.module.css'
 
 const Card = ({news}) => {
@@ -15,6 +14,7 @@ const Card = ({news}) => {
                         <h4>{news.title}</h4>
                         <small>{news.byline}</small>
                         <p>{news.abstract}</p>
+                        <strong><a href={news.url}>Read more</a></strong>
                     </div>
                 </div>
             </div>
